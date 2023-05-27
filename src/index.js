@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import { AuthProvider } from '@propelauth/react';
 import { BrowserRouter } from "react-router-dom";
+import { process } from './env';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
