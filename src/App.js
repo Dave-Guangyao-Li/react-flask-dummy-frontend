@@ -12,7 +12,7 @@ const App = withAuthInfo(({ isLoggedIn }) => {
 
   if (isLoggedIn) {
     return <div>
-      <p>The User is logged in</p>
+      <p>This User is logged in</p>
       <button onClick={() => logoutFn()}>
         Click here to log out
       </button>
