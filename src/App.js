@@ -3,6 +3,9 @@ import { useLogoutFunction, useRedirectFunctions, withAuthInfo } from '@propelau
 import { Routes, Route } from "react-router-dom";
 import Home from './components/Home';
 import UserInfo from './components/UserInfo';
+import AuthenticatedRequest from './components/AuthenticatedRequest';
+import ListOfOrgs from './components/ListOfOrgs';
+import OrgInfo from './components/OrgInfo';
 const App = withAuthInfo(({ isLoggedIn }) => {
   const logoutFn = useLogoutFunction()
   const { redirectToSignupPage, redirectToLoginPage } = useRedirectFunctions();
@@ -16,6 +19,10 @@ const App = withAuthInfo(({ isLoggedIn }) => {
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route path="/user_info" element={<UserInfo />} />
+        <Route path="/auth" element={<AuthenticatedRequest />} />
+        <Route path="/orgs" element={<ListOfOrgs />} />
+        <Route path="/org/:orgName" element={<OrgInfo />} />
+
       </Routes>
     </div>
   } else {
