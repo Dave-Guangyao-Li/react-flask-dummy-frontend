@@ -6,9 +6,6 @@ from propelauth_flask import init_auth, current_user, current_org
 
 load_dotenv()
 
-os.environ['PROPELAUTH_AUTH_URL'] = 'https://864666172.propelauthtest.com'
-os.environ['PROPELAUTH_API_KEY'] = 'dd0cc1204684a2c84d01fd631a98ff550a0a964bc9f38a7f65aabcd1e9ed63478e7e0d0d24c4a5792cce20922a65e06e'
-
 app = Flask(__name__)
 auth = init_auth(os.getenv("PROPELAUTH_AUTH_URL"), os.getenv("PROPELAUTH_API_KEY"))
 
