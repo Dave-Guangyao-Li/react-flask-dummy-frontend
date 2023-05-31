@@ -8,6 +8,8 @@ function UserInfo({ user }) {
         <img src={user.pictureUrl} alt={'profile'} className='pictureUrl' />
       )}
       <pre>user: {JSON.stringify(user, null, 2)}</pre>
+
+      <img src={user.pictureUrl} alt={'profile'} id='user_img' />
     </span>
   )
 }

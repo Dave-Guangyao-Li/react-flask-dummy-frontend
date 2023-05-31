@@ -9,6 +9,7 @@ function Home(props) {
         Click Here to see an authenticated request to the backend
       </Link>
       <Link to='/orgs'>Click Here to see org info</Link>
+      <Link to='/blogs'>Click Here to see blogs</Link>
     </div>
   )
 }

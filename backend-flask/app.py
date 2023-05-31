@@ -1,8 +1,24 @@
 import os
 
-from flask import Flask
+from flask import Flask, jsonify
 from dotenv import load_dotenv
 from propelauth_flask import init_auth, current_user, current_org
+
+# data
+# Define your blog posts
+blogPosts = [
+    {
+        "id": 1,
+        "title": "Blog Post 1",
+        "content": "This is the first blog post"
+    },
+    {
+        "id": 2,
+        "title": "Blog Post 2",
+        "content": "This is the second blog post"
+    }
+]
+
 
 load_dotenv()
 
@@ -21,3 +37,8 @@ def who_am_i():
 def org_info(org_id):
     return {"org_id": current_org.org_id, 
       "org_name":   current_org.org_name}
+    
+@app.route("/blogs")
+# @auth.require_user
+def blog_info():
+    return jsonify(blogPosts)
